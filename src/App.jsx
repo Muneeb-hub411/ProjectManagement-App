@@ -21,7 +21,7 @@ function App() {
     };
     setSelectProject((prevState) => ({
       ...prevState,
-
+      projeectid: undefined,
       projects: [...prevState.projects, newProject],
     }));
   };
@@ -44,7 +44,10 @@ function App() {
 
   return (
     <main className="h-screen my-8 flex gap-8">
-      <Projectsidebars handleProjectStart={handleStartProject} />
+      <Projectsidebars
+        handleProjectStart={handleStartProject}
+        projects={selectProject.projects}
+      />
       {content}
     </main>
   );

@@ -1,6 +1,4 @@
-import React from "react";
-
-const Projectsidebars = ({ handleProjectStart }) => {
+const Projectsidebars = ({ handleProjectStart, projects }) => {
   return (
     <aside className=" w-1/3 bg-stone-900 text-stone-50 px-10 py-16 md:w-72 rounded-r-xl">
       <h2 className="font-bold text-stone-200 mb-8 md:text-xl uppercase">
@@ -15,7 +13,15 @@ const Projectsidebars = ({ handleProjectStart }) => {
         </button>
       </div>
       <ul>
-        <li>Project 1</li>
+        {projects.map((project) => {
+          return (
+            <li key={project.id}>
+              <button className="text-stone-300 w-full  hover:text-stone-100 text-left py-2 border-b border-stone-700">
+                {project.enteredTitle}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </aside>
   );
