@@ -1,4 +1,5 @@
 import React from "react";
+import Tasks from "./Tasks";
 
 const ProjectSelect = ({ project, handleDelete }) => {
   console.log("this is a project :", project);
@@ -34,6 +35,8 @@ const ProjectSelect = ({ project, handleDelete }) => {
         </p>
         <p className="text-gray-500 text-sm italic">Due on {formattedDate}</p>
       </div>
+      <h3 className="text-4xl font-bold">Tasks</h3>
+      <Tasks />
     </div>
   );
 };
