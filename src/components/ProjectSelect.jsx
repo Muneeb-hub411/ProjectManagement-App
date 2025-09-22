@@ -1,7 +1,7 @@
 import React from "react";
 import Tasks from "./Tasks";
 
-const ProjectSelect = ({ project, handleDelete }) => {
+const ProjectSelect = ({ project, handleDelete, onAddTask, tasks }) => {
   console.log("this is a project :", project);
 
   const formattedDate = new Date(project.enteredDueDate).toLocaleDateString(
@@ -36,7 +36,7 @@ const ProjectSelect = ({ project, handleDelete }) => {
         <p className="text-gray-500 text-sm italic">Due on {formattedDate}</p>
       </div>
       <h3 className="text-4xl font-bold">Tasks</h3>
-      <Tasks />
+      <Tasks handleAddTask={onAddTask} tasks={tasks} />
     </div>
   );
 };

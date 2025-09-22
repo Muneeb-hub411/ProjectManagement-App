@@ -2,7 +2,7 @@ const Projectsidebars = ({
   handleProjectStart,
   projects,
   handleselectedProject,
-  selectedProjectId, // 👈 get this from parent
+  selectedProjectId,
 }) => {
   return (
     <aside className="w-1/3 bg-stone-900 text-stone-50 px-10 py-16 md:w-72 rounded-r-xl">
