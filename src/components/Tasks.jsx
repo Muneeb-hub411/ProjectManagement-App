@@ -1,6 +1,6 @@
 import AddTasks from "./AddTasks";
 
-const Tasks = ({ handleAddTask, tasks }) => {
+const Tasks = ({ handleAddTask, tasks, handleDelete }) => {
   return (
     <>
       <div>
@@ -17,7 +17,10 @@ const Tasks = ({ handleAddTask, tasks }) => {
                 className="border-b flex gap-3 items-center border-gray-300 py-2 mt-2"
               >
                 <span>{task.text}</span>
-                <button className="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded-lg shadow hover:bg-red-600 transition-colors">
+                <button
+                  onClick={() => handleDelete(task.id)}
+                  className="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded-lg shadow hover:bg-red-600 transition-colors"
+                >
                   Delete
                 </button>
               </li>

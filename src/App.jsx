@@ -16,6 +16,7 @@ function App() {
       text: text,
       id: Math.random().toString(),
     };
+
     setSelectProject((prevState) => ({
       ...prevState,
       projectId: prevState.projectId,
@@ -23,6 +24,13 @@ function App() {
     }));
     console.log(selectProject);
     console.log("this is new task :", newTask);
+  };
+  const handleDeleteTask = (id) => {
+    setSelectProject((prevState) => ({
+      ...prevState,
+      projectId: prevState.projectId,
+      tasks: prevState.tasks.filter((task) => task.id !== id),
+    }));
   };
 
   const handleStartProject = () => {
@@ -80,6 +88,7 @@ function App() {
       project={projectSelected}
       handleDelete={handleDeleteProject}
       onAddTask={handleAddtask}
+      onDeleteTask={handleDeleteTask}
       tasks={selectProject.tasks}
     />
   );
